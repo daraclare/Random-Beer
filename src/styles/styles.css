@@ -106,4 +106,16 @@ figcaption {
   figure {
     flex: 1;
   }
+
+  button {
+    margin: 1%;
+  }
+
+  img {
+    width: 30vw;
+  }
+
+  header {
+    padding-bottom: 0;
+  }
 }
