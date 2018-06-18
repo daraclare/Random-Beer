@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { api, URL } from "../Api/Api";
 import { BeerInfo } from "../BeerInfo/BeerInfo";
-import Brewery from "../Brewery/Brewery";
+import { Brewery } from "../Brewery/Brewery";
 
 class Beers extends Component {
   constructor() {
