@@ -4,11 +4,15 @@
   --primary-bg-color: #2980b9;
   --secondary-bg-color: #2c3e50;
   --button-color: #e74c3c;
-  --button-hover-color: #c0392b;
   --secondary-color: #16a085;
   --teriary-color: #f39c12;
   --font-color: white;
   --font-disabled: #ecf0f1;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -48,9 +52,11 @@ button {
   padding: 1rem;
   cursor: pointer;
 }
+
+a:hover,
 button:hover {
-  background: var(--button-hover-color);
-  color: var(--font-color);
+  -webkit-filter: contrast(1.5);
+  filter: contrast(1.5);
 }
 
 button:disabled {
@@ -59,7 +65,7 @@ button:disabled {
 
 .back-button {
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   left: 1%;
   height: 50px;
 }
@@ -76,7 +82,6 @@ h1 {
 
 img {
   width: 40vw;
-  border-radius: 50%;
   padding: 0;
   border: solid 5px white;
 }
@@ -97,7 +102,7 @@ figcaption {
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   section {
     display: flex;
   }

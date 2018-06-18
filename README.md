@@ -14,7 +14,7 @@ cd Random-Beer
 # install all node modules in the package.json file
 npm install
 
-# start the application — this will enable hot-reloading, linting and display the coverage in the console
+# start the application — this will enable hot-reloading, linting, run tests and display the coverage in the console
 npm start
 ```
 
@@ -42,3 +42,13 @@ Given more time, below is a list of improvements that could be made to the app.
 **Responsive Testing:** although efforts have been made to ensure the app is responsive, these have not been extensively tested outside the Chrome Dev tools.
 
 **UI Design:** The app would benefit from more time spent on designing the UI.
+
+
+### Testing ###
+Although time did not allow for testing, Mocha is setup as the JavaScript testing framework. Test can be written in **ES6** or **ES7**, test files are transpiled to ES5 for Mocha and Istanbul.
+Test files can be placed in the 'tests' folder, or placed in the relevant component folder as preferred. All test files with the extension ```.spec.js``` (for instance ```homepage.spec.js```) are run when ```npm start``` is run, and can also be run with the command ```npm test```.
+
+ES Linting is also implemented to reveal errors in JavaScript code and sure best practices.
+
+#### Test Coverage ####
+Istanbul is used for test coverage. It is ran when testing and can also be viewed in the browser using ```npm run coverage```.
