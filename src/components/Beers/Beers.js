@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import { Route, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import "./beers.css";
-
 import { api, URL } from "../Api/Api";
-import { BeerInfo } from "./BeerInfo";
-import Brewery from "./Brewery";
+import { BeerInfo } from "../BeerInfo/BeerInfo";
+import Brewery from "../Brewery/Brewery";
 
 class Beers extends Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      loading: true
+      loading: true,
+      disabled: false
     };
 
     this.loadRandomBeer = this.loadRandomBeer.bind(this);
@@ -24,6 +23,9 @@ class Beers extends Component {
   }
 
   loadRandomBeer() {
+    this.setState({
+      disabled: true
+    });
     api.getData(URL).then(response => {
       if (this.props.history.location.pathname !== "/") {
         this.props.history.push("/");
@@ -31,7 +33,8 @@ class Beers extends Component {
       this.props.history.push(`/${response.data.id}`);
       this.setState({
         data: response.data,
-        loading: false
+        loading: false,
+        disabled: false
       });
     });
   }
@@ -39,16 +42,16 @@ class Beers extends Component {
   render() {
     const data = this.state.data;
     const loading = this.state.loading;
+    const disabled = this.state.disabled
+      ? "Searching …"
+      : "Find Another Random Beer";
     return (
       <div id="container">
         {loading ? (
-          <h1>Loading a random beer …</h1>
+          <h1>Please wait while we find a random beer …</h1>
         ) : (
           <div>
-            <button onClick={this.loadRandomBeer}>
-              {" "}
-              Find Another Random Beer
-            </button>
+            <button onClick={this.loadRandomBeer}>{disabled}</button>
             <Route
               exact
               path="/:id"

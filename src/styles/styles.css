@@ -1,24 +1,72 @@
 @import "./font-face.css";
 
+:root {
+  --primary-bg-color: #2980b9;
+  --secondary-bg-color: #2c3e50;
+  --button-color: #e74c3c;
+  --button-hover-color: #c0392b;
+  --secondary-color: #16a085;
+  --teriary-color: #f39c12;
+  --font-color: white;
+  --font-disabled: #ecf0f1;
+}
+
 html {
   font: 14px/20px "Graphik Web Light", Arial, Verdana, sans-serif;
+  color: var(--font-color);
 }
 
 body {
   margin: 0;
   text-align: center;
+  background: var(--primary-bg-color);
 }
 
 header {
-  background: #25859a;
+  background: var(--secondary-bg-color);
   height: 10vh;
   font-size: 2rem;
   line-height: 2rem;
   padding: 2%;
 }
 
-header h1 {
-  color: white;
+a {
+  color: var(--teriary-color);
+  text-decoration: none;
+  font-family: "Graphik Web Regular";
+  cursor: pointer;
+}
+
+button {
+  background: var(--button-color);
+  border-radius: 5px;
+  border-color: transparent;
+  font-weight: bold;
+  color: var(--font-color);
+  margin: 5%;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--button-hover-color);
+  color: var(--font-color);
+}
+
+button:disabled {
+  background: var(--font-disabled);
+}
+
+.back-button {
+  position: absolute;
+  bottom: 5%;
+  left: 1%;
+  height: 50px;
+}
+
+.back-button > button {
+  width: 100%;
+  background: var(--secondary-color);
 }
 
 h1 {
@@ -26,19 +74,36 @@ h1 {
   line-height: 2rem;
 }
 
-header a {
-  text-decoration: none;
-  color: white;
-}
-
 img {
-  width: 50vw;
+  width: 40vw;
   border-radius: 50%;
+  padding: 0;
+  border: solid 5px white;
 }
 
-button {
-  width: 20vw;
-  margin: 2rem;
-  padding: 2rem;
-  border-radius: 5%;
+figure.brewery {
+  margin-bottom: 50px;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: var(--secondary-bg-color);
+  padding: 2% 5% 5% 5%;
+  margin: 0 5% 5% 5%;
+  position: relative;
+}
+
+figcaption {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    display: flex;
+  }
+
+  article,
+  figure {
+    flex: 1;
+  }
 }
