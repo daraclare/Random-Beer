@@ -1,15 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <Link to="/">HOME</Link>
-      {" | "}
-      <Link to="/redux">REDUX</Link>
-      {" | "}
-      <Link to="/api">API</Link>
-    </div>
+    <header>
+      <h1>Random Beer Finder</h1>
+    </header>
   );
 };
 
