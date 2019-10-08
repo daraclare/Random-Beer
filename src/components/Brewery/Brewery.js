@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 export const Brewery = props => {
   const { data } = props;
   const brewery = data.breweries[0];
+  console.log("brewery", brewery);
+
   return (
     <div className="card">
       <h1>About the Brewery </h1>

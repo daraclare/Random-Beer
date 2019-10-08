@@ -19,7 +19,10 @@ export const BeerInfo = props => {
           </p>
         </article>
         <figure>
-          <img src={`${data.labels.medium}`} alt={`${data.name} label}`} />
+          {data.labels && (
+            <img src={`${data.labels.medium}`} alt={`${data.name} label}`} />
+          )}
+
           <figcaption>{data.name} Label</figcaption>
         </figure>
       </section>
