@@ -11,7 +11,7 @@ configure({ adapter: new Adapter() });
 
 describe("Beers tag test", () => {
   const wrapper = shallow(<Header />);
-  it("should be a <div> tag", () => {
+  it("should be a <header> tag", () => {
     expect(wrapper.type()).to.eql("header");
   });
 });
